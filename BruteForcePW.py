@@ -1,15 +1,13 @@
-# Created by Marco Romanin
-
 import string
-paswd = input("Insert Password to Crack: \n")
-def Brute(paswd):
+pw = input("Insert Password: \n")
+def BruteForce(pw=str):
 	print("[+][+] Starting BruteForce...")
 	charset = list(string.ascii_letters + string.digits + string.punctuation)
 	result = ""
 	x = 0
-	while x <= len(paswd)-1:
+	while x <= len(pw)-1:
 		for char in charset:
-			pchar = paswd[x]
+			pchar = pw[x]
 			if char == pchar:
 				print("[+] Trying...", char)
 				print("[+][+] Matched (",char, ")")
@@ -20,7 +18,7 @@ def Brute(paswd):
 			else:
 				print("[+] Trying...",char)
 	print("[+][+] Matching Done - Password Found:", result)
+bf = BruteForce
  
-Brute(paswd) 
-#Password MaxLenght is : about 10
-#This is an old version, BruteForce#2 is more efficent, but this still be a great work for me, about 15 lines of code to check if a string is equal to another string, char by char.
+bf(pw) 
+#PW MaxLenght is : about 10
